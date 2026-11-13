@@ -1,0 +1,716 @@
+[
+ {
+  "n": 1,
+  "id": "00-how-to-use",
+  "strand": "Start",
+  "title": "How to use these videos",
+  "duration": 60
+ },
+ {
+  "n": 2,
+  "id": "01-caged-forms",
+  "strand": "Chords",
+  "title": "The CAGED forms",
+  "duration": 85
+ },
+ {
+  "n": 3,
+  "id": "02-close-triads",
+  "strand": "Chords",
+  "title": "Close triads",
+  "duration": 210
+ },
+ {
+  "n": 4,
+  "id": "02b-spread-triads",
+  "strand": "Chords",
+  "title": "Spread triads",
+  "duration": 149
+ },
+ {
+  "n": 5,
+  "id": "03as-drop2-ladder",
+  "strand": "Chords",
+  "title": "Drop 2 inversions",
+  "duration": 359
+ },
+ {
+  "n": 6,
+  "id": "03b-drop2-more",
+  "strand": "Chords",
+  "title": "Drop 2: four more chords",
+  "duration": 270
+ },
+ {
+  "n": 7,
+  "id": "03c-drop3-core",
+  "strand": "Chords",
+  "title": "Drop 3 inversions",
+  "duration": 243
+ },
+ {
+  "n": 8,
+  "id": "03d-drop3-more",
+  "strand": "Chords",
+  "title": "Drop 3: four more chords",
+  "duration": 199
+ },
+ {
+  "n": 9,
+  "id": "04a-morph-map",
+  "strand": "Chords",
+  "title": "The morph map",
+  "duration": 185
+ },
+ {
+  "n": 10,
+  "id": "04b-extensions",
+  "strand": "Chords",
+  "title": "Extensions on four-note shapes",
+  "duration": 128
+ },
+ {
+  "n": 11,
+  "id": "04c-subs-ii-v-i",
+  "strand": "Chords",
+  "title": "Substitutions on a ii – V – I",
+  "duration": 118
+ },
+ {
+  "n": 12,
+  "id": "04d-subs-turnarounds",
+  "strand": "Chords",
+  "title": "Substitutions in turnarounds",
+  "duration": 115
+ },
+ {
+  "n": 13,
+  "id": "05a-seventh-arpeggios",
+  "strand": "Lines",
+  "title": "Seventh arpeggios",
+  "duration": 206
+ },
+ {
+  "n": 14,
+  "id": "05b-extended-arpeggios",
+  "strand": "Lines",
+  "title": "6, m6 and extended arpeggios",
+  "duration": 149
+ },
+ {
+  "n": 15,
+  "id": "09a-scale-geography",
+  "strand": "Lines",
+  "title": "Scale geography",
+  "duration": 218
+ },
+ {
+  "n": 16,
+  "id": "09b-scale-sequences",
+  "strand": "Lines",
+  "title": "Scale sequences",
+  "duration": 116
+ },
+ {
+  "n": 17,
+  "id": "09c-picking-cells",
+  "strand": "Lines",
+  "title": "Picking cells",
+  "duration": 94
+ },
+ {
+  "n": 18,
+  "id": "09d-double-stops",
+  "strand": "Lines",
+  "title": "Double stops",
+  "duration": 129
+ },
+ {
+  "n": 19,
+  "id": "09e-contrary-motion",
+  "strand": "Lines",
+  "title": "Contrary motion",
+  "duration": 93
+ },
+ {
+  "n": 20,
+  "id": "08-modes",
+  "strand": "Scales",
+  "title": "Modes on one root",
+  "duration": 152
+ },
+ {
+  "n": 21,
+  "id": "12-melodic-minor-harmony",
+  "strand": "Scales",
+  "title": "Melodic minor harmony",
+  "duration": 98
+ },
+ {
+  "n": 22,
+  "id": "12m-melodic-minor-modes",
+  "strand": "Scales",
+  "title": "Melodic minor and its modes",
+  "duration": 120
+ },
+ {
+  "n": 23,
+  "id": "13a-harmonic-harmony",
+  "strand": "Scales",
+  "title": "Harmonic minor and major harmony",
+  "duration": 81
+ },
+ {
+  "n": 24,
+  "id": "13b-barry-harris",
+  "strand": "Scales",
+  "title": "The 6th-diminished scale",
+  "duration": 173
+ },
+ {
+  "n": 25,
+  "id": "13c-diminished-blues",
+  "strand": "Scales",
+  "title": "Diminished on a blues",
+  "duration": 150
+ },
+ {
+  "n": 26,
+  "id": "13h-harmonic-minor-modes",
+  "strand": "Scales",
+  "title": "Harmonic minor and its modes",
+  "duration": 109
+ },
+ {
+  "n": 27,
+  "id": "13s-symmetric-scales",
+  "strand": "Scales",
+  "title": "Diminished and symmetric scales",
+  "duration": 217
+ },
+ {
+  "n": 28,
+  "id": "14a-pentatonics",
+  "strand": "Scales",
+  "title": "Pentatonics, blues scales, triad pairs",
+  "duration": 101
+ },
+ {
+  "n": 29,
+  "id": "14b-upper-structures",
+  "strand": "Scales",
+  "title": "Upper structures",
+  "duration": 50
+ },
+ {
+  "n": 30,
+  "id": "15-bebop",
+  "strand": "Scales",
+  "title": "Bebop scales and line vocabulary",
+  "duration": 81
+ },
+ {
+  "n": 31,
+  "id": "06-diatonic-cycles",
+  "strand": "Progressions",
+  "title": "Diatonic sevenths and voice-leading cycles",
+  "duration": 96
+ },
+ {
+  "n": 32,
+  "id": "07a-ii-v-i-keys",
+  "strand": "Progressions",
+  "title": "ii–V–I in every key",
+  "duration": 187
+ },
+ {
+  "n": 33,
+  "id": "07b-minor-ii-v-i-keys",
+  "strand": "Progressions",
+  "title": "Minor ii–V–i in every key",
+  "duration": 187
+ },
+ {
+  "n": 34,
+  "id": "11-0-tunes-as-numbers",
+  "strand": "Progressions",
+  "title": "Tunes as numbers",
+  "duration": 92
+ },
+ {
+  "n": 35,
+  "id": "11-1-explain-ii-v-i",
+  "strand": "Progressions",
+  "title": "Why ii – V – I works",
+  "duration": 57
+ },
+ {
+  "n": 36,
+  "id": "11-2-explain-i-vi-ii-v",
+  "strand": "Progressions",
+  "title": "Why I – vi – ii – V turns around",
+  "duration": 59
+ },
+ {
+  "n": 37,
+  "id": "11-3-explain-iii-vi-ii-v",
+  "strand": "Progressions",
+  "title": "Why iii – VI7 – ii – V works",
+  "duration": 62
+ },
+ {
+  "n": 38,
+  "id": "11-4-explain-backdoor",
+  "strand": "Progressions",
+  "title": "Why the backdoor works",
+  "duration": 56
+ },
+ {
+  "n": 39,
+  "id": "11-5-explain-minor-ii-v-i",
+  "strand": "Progressions",
+  "title": "Why the minor ii – V – i works",
+  "duration": 58
+ },
+ {
+  "n": 40,
+  "id": "11-6-explain-blues",
+  "strand": "Progressions",
+  "title": "Why the 12-bar blues works",
+  "duration": 102
+ },
+ {
+  "n": 41,
+  "id": "11-7-explain-secondary-dominants",
+  "strand": "Progressions",
+  "title": "Secondary dominants: the chain",
+  "duration": 69
+ },
+ {
+  "n": 42,
+  "id": "11-8-explain-tritone-sub",
+  "strand": "Progressions",
+  "title": "Why the tritone sub works",
+  "duration": 57
+ },
+ {
+  "n": 43,
+  "id": "11t-turnarounds-areas",
+  "strand": "Progressions",
+  "title": "Turnarounds in five areas",
+  "duration": 228
+ },
+ {
+  "n": 44,
+  "id": "11t2-turnarounds-middle",
+  "strand": "Progressions",
+  "title": "Turnarounds in five areas",
+  "duration": 228
+ },
+ {
+  "n": 45,
+  "id": "11t3-turnarounds-low",
+  "strand": "Progressions",
+  "title": "Turnarounds in five areas",
+  "duration": 228
+ },
+ {
+  "n": 46,
+  "id": "10-walking-bass",
+  "strand": "Hands and time",
+  "title": "Walking bass",
+  "duration": 103
+ },
+ {
+  "n": 47,
+  "id": "16-chord-melody",
+  "strand": "Hands and time",
+  "title": "Chord melody: Silent Night",
+  "duration": 135
+ },
+ {
+  "n": 48,
+  "id": "17-rhythmic-vocabulary",
+  "strand": "Hands and time",
+  "title": "Rhythmic vocabulary",
+  "duration": 95
+ },
+ {
+  "n": 49,
+  "id": "S1-strumming-foundations",
+  "strand": "Strumming",
+  "title": "Strumming: foundations and syncopation",
+  "duration": 111
+ },
+ {
+  "n": 50,
+  "id": "S2-strumming-advanced",
+  "strand": "Strumming",
+  "title": "Strumming: 16ths and advanced",
+  "duration": 83
+ },
+ {
+  "n": 51,
+  "id": "F1-fingerpicking-foundations",
+  "strand": "Fingerpicking",
+  "title": "Fingerpicking foundations",
+  "duration": 86
+ },
+ {
+  "n": 52,
+  "id": "F2-travis-catalogue",
+  "strand": "Fingerpicking",
+  "title": "The Travis catalogue",
+  "duration": 101
+ },
+ {
+  "n": 53,
+  "id": "F3-travis-combinations",
+  "strand": "Fingerpicking",
+  "title": "Travis combinations",
+  "duration": 95
+ },
+ {
+  "n": 54,
+  "id": "G2-samba",
+  "strand": "Genres",
+  "title": "Samba",
+  "duration": 57
+ },
+ {
+  "n": 55,
+  "id": "G3-swing-comping",
+  "strand": "Genres",
+  "title": "Swing comping",
+  "duration": 52
+ },
+ {
+  "n": 56,
+  "id": "G4-jazz-blues",
+  "strand": "Genres",
+  "title": "Jazz blues",
+  "duration": 58
+ },
+ {
+  "n": 57,
+  "id": "G5-gypsy-jazz",
+  "strand": "Genres",
+  "title": "Gypsy jazz",
+  "duration": 49
+ },
+ {
+  "n": 58,
+  "id": "G7-soul",
+  "strand": "Genres",
+  "title": "Soul and R&B",
+  "duration": 53
+ },
+ {
+  "n": 59,
+  "id": "G8-blues-shuffle",
+  "strand": "Genres",
+  "title": "Blues shuffle",
+  "duration": 66
+ },
+ {
+  "n": 60,
+  "id": "C7-giuliani-arpeggios",
+  "strand": "Repertoire",
+  "title": "Giuliani: 12 right-hand studies",
+  "duration": 116
+ },
+ {
+  "n": 61,
+  "id": "b1-odeon",
+  "strand": "Repertoire",
+  "title": "Nazareth: Odeon",
+  "duration": 84
+ },
+ {
+  "n": 62,
+  "id": "c11-albeniz-asturias",
+  "strand": "Repertoire",
+  "title": "Albéniz: Asturias",
+  "duration": 67
+ },
+ {
+  "n": 63,
+  "id": "c12-granados-andaluza",
+  "strand": "Repertoire",
+  "title": "Granados: Andaluza",
+  "duration": 65
+ },
+ {
+  "n": 64,
+  "id": "c13-romance",
+  "strand": "Repertoire",
+  "title": "Romance",
+  "duration": 131
+ },
+ {
+  "n": 65,
+  "id": "c2-bach-bourree",
+  "strand": "Repertoire",
+  "title": "Bach: Bourrée in E minor",
+  "duration": 72
+ },
+ {
+  "n": 66,
+  "id": "c3-bach-prelude-bwv999",
+  "strand": "Repertoire",
+  "title": "Bach: Prelude BWV 999",
+  "duration": 128
+ },
+ {
+  "n": 67,
+  "id": "c4-dowland-lachrimae",
+  "strand": "Repertoire",
+  "title": "Dowland: Lachrimae",
+  "duration": 101
+ },
+ {
+  "n": 68,
+  "id": "c5-sor-op35-no22",
+  "strand": "Repertoire",
+  "title": "Sor: Study in B minor",
+  "duration": 114
+ },
+ {
+  "n": 69,
+  "id": "c8-tarrega-lagrima",
+  "strand": "Repertoire",
+  "title": "Tárrega: Lágrima",
+  "duration": 124
+ },
+ {
+  "n": 70,
+  "id": "c9-tarrega-adelita",
+  "strand": "Repertoire",
+  "title": "Tárrega: Adelita",
+  "duration": 124
+ },
+ {
+  "n": 71,
+  "id": "cl3-bach-preludio-bwv1006a",
+  "strand": "Repertoire",
+  "title": "Bach: Preludio BWV 1006a",
+  "duration": 128
+ },
+ {
+  "n": 72,
+  "id": "cl5-coste-prelude-dm",
+  "strand": "Repertoire",
+  "title": "Coste: Prélude in D minor",
+  "duration": 116
+ },
+ {
+  "n": 73,
+  "id": "cp1-bach-invention-1",
+  "strand": "Repertoire",
+  "title": "Bach: Invention No. 1",
+  "duration": 82
+ },
+ {
+  "n": 74,
+  "id": "cp3-bach-invention-8",
+  "strand": "Repertoire",
+  "title": "Bach: Invention No. 8",
+  "duration": 93
+ },
+ {
+  "n": 75,
+  "id": "cp8-scarlatti-k11",
+  "strand": "Repertoire",
+  "title": "Scarlatti: Sonata K. 11",
+  "duration": 85
+ },
+ {
+  "n": 76,
+  "id": "cp9-narvaez-guardame-las-vacas",
+  "strand": "Repertoire",
+  "title": "Narváez: Guárdame las vacas",
+  "duration": 105
+ },
+ {
+  "n": 77,
+  "id": "fb1-she-moved-through-the-fair",
+  "strand": "Repertoire",
+  "title": "She Moved Through the Fair",
+  "duration": 154
+ },
+ {
+  "n": 78,
+  "id": "fb4-byrd-earl-of-salisbury",
+  "strand": "Repertoire",
+  "title": "Byrd: The Earl of Salisbury",
+  "duration": 97
+ },
+ {
+  "n": 79,
+  "id": "fb6-scarborough-fair",
+  "strand": "Repertoire",
+  "title": "Scarborough Fair",
+  "duration": 106
+ },
+ {
+  "n": 80,
+  "id": "fb7-johnson-alman",
+  "strand": "Repertoire",
+  "title": "Robert Johnson: Alman",
+  "duration": 114
+ },
+ {
+  "n": 81,
+  "id": "fb8-american-primitive",
+  "strand": "Repertoire",
+  "title": "An American primitive study",
+  "duration": 47
+ },
+ {
+  "n": 82,
+  "id": "j1-st-louis-blues",
+  "strand": "Repertoire",
+  "title": "Handy: St. Louis Blues",
+  "duration": 67
+ },
+ {
+  "n": 83,
+  "id": "j2-rhythm-changes",
+  "strand": "Repertoire",
+  "title": "Rhythm changes",
+  "duration": 93
+ },
+ {
+  "n": 84,
+  "id": "j4-sweet-georgia-brown",
+  "strand": "Repertoire",
+  "title": "Sweet Georgia Brown",
+  "duration": 39
+ },
+ {
+  "n": 85,
+  "id": "l1-la-cumparsita",
+  "strand": "Repertoire",
+  "title": "La Cumparsita",
+  "duration": 144
+ },
+ {
+  "n": 86,
+  "id": "l2-cielito-lindo",
+  "strand": "Repertoire",
+  "title": "Cielito Lindo",
+  "duration": 124
+ },
+ {
+  "n": 87,
+  "id": "l3-son-montuno",
+  "strand": "Repertoire",
+  "title": "Son montuno: the guajeo",
+  "duration": 45
+ },
+ {
+  "n": 88,
+  "id": "o1-sea-glass",
+  "strand": "Repertoire",
+  "title": "Sea Glass",
+  "duration": 166
+ },
+ {
+  "n": 89,
+  "id": "r1-joplin-entertainer",
+  "strand": "Repertoire",
+  "title": "Joplin: The Entertainer",
+  "duration": 79
+ },
+ {
+  "n": 90,
+  "id": "r2-west-coast-blues",
+  "strand": "Repertoire",
+  "title": "Blind Blake: West Coast Blues",
+  "duration": 90
+ },
+ {
+  "n": 91,
+  "id": "r3-delta-turnarounds",
+  "strand": "Repertoire",
+  "title": "Delta blues turnarounds",
+  "duration": 68
+ },
+ {
+  "n": 92,
+  "id": "r3a-bach-prelude-opening",
+  "strand": "Repertoire",
+  "title": "Bach: Cello Suite No. 1, Prelude",
+  "duration": 114
+ },
+ {
+  "n": 93,
+  "id": "r5-si-bheag-si-mhor",
+  "strand": "Repertoire",
+  "title": "O'Carolan: Si Bheag Si Mhor",
+  "duration": 100
+ },
+ {
+  "n": 94,
+  "id": "r6-soldiers-joy",
+  "strand": "Repertoire",
+  "title": "Soldier's Joy",
+  "duration": 112
+ },
+ {
+  "n": 95,
+  "id": "s1-malaguena",
+  "strand": "Repertoire",
+  "title": "Malagueña",
+  "duration": 68
+ },
+ {
+  "n": 96,
+  "id": "s2-solea-compas",
+  "strand": "Repertoire",
+  "title": "Soleá: compás and falseta",
+  "duration": 47
+ },
+ {
+  "n": 97,
+  "id": "s3-bulerias-compas",
+  "strand": "Repertoire",
+  "title": "Bulerías: compás and remate",
+  "duration": 44
+ },
+ {
+  "n": 98,
+  "id": "w1-raga-yaman",
+  "strand": "Repertoire",
+  "title": "Raga Yaman on guitar",
+  "duration": 134
+ },
+ {
+  "n": 99,
+  "id": "w2-slack-key",
+  "strand": "Repertoire",
+  "title": "Hawaiian slack-key",
+  "duration": 49
+ },
+ {
+  "n": 100,
+  "id": "w3-kora-pattern",
+  "strand": "Repertoire",
+  "title": "A kora pattern",
+  "duration": 45
+ },
+ {
+  "n": 101,
+  "id": "g1-bossa-nova",
+  "strand": "Other",
+  "title": "Bossa nova",
+  "duration": 122
+ },
+ {
+  "n": 102,
+  "id": "g6-funk",
+  "strand": "Other",
+  "title": "Funk rhythm guitar",
+  "duration": 138
+ }
+]

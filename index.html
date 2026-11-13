@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Guitarnautics</title>
+<meta name="theme-color" content="#0b0b0c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Guitarnautics">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<style>
+  :root { --bg: #0b0b0c; --panel: #151517; --line: #26262a; --ink: #f2f0ea; --dim: #9b9890; --accent: #ffb547; }
+  * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+  html, body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.35 -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(12px);
+           padding: calc(env(safe-area-inset-top) + 14px) 16px 10px; border-bottom: 1px solid var(--line); }
+  h1 { margin: 0; font-size: 24px; letter-spacing: 0.01em; }
+  .sum { color: var(--dim); font-size: 14px; margin-top: 2px; }
+  .bar { height: 3px; background: var(--line); border-radius: 2px; margin-top: 10px; overflow: hidden; }
+  .bar > i { display: block; height: 100%; background: var(--accent); width: 0; }
+  main { padding: 4px 0 calc(env(safe-area-inset-bottom) + 24px); }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--dim); margin: 22px 16px 6px; font-weight: 600; }
+  ul { list-style: none; margin: 0; padding: 0; }
+  li { display: flex; align-items: center; gap: 12px; padding: 11px 16px; border-bottom: 1px solid var(--line); cursor: pointer; }
+  li:active { background: var(--panel); }
+  .n { width: 30px; color: var(--dim); font-size: 13px; font-variant-numeric: tabular-nums; flex: none; }
+  .t { flex: 1; min-width: 0; }
+  .t b { display: block; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .t small { color: var(--dim); font-size: 13px; }
+  .c { flex: none; min-width: 34px; text-align: center; font-size: 13px; font-variant-numeric: tabular-nums; border-radius: 12px; padding: 3px 8px;
+       border: 1px solid var(--line); color: var(--dim); }
+  .c.on { background: var(--accent); border-color: var(--accent); color: #1a1206; font-weight: 600; }
+  li.last { background: #131315; }
+  #player { position: fixed; inset: 0; background: #000; z-index: 5; display: none; flex-direction: column; }
+  #player.open { display: flex; }
+  #player video { width: 100%; max-height: 70vh; background: #000; margin-top: env(safe-area-inset-top); }
+  .ph { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .ph .strand { color: var(--dim); font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; }
+  .ph .title { font-size: 20px; font-weight: 600; }
+  .ph .count { color: var(--accent); font-size: 15px; }
+  .row { display: flex; gap: 10px; padding: 8px 16px calc(env(safe-area-inset-bottom) + 16px); margin-top: auto; }
+  button { flex: 1; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; padding: 13px; font: inherit; }
+  button:active { background: var(--line); }
+  @media (orientation: landscape) { #player video { max-height: 100vh; height: 100vh; margin-top: 0; } #player .ph, #player .row { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Guitarnautics</h1>
+  <div class="sum" id="sum">Loading…</div>
+  <div class="bar"><i id="prog"></i></div>
+</header>
+<main id="list"></main>
+
+<div id="player" aria-modal="true" role="dialog">
+  <video id="video" controls playsinline preload="metadata"></video>
+  <div class="ph">
+    <div class="strand" id="pstrand"></div>
+    <div class="title" id="ptitle"></div>
+    <div class="count" id="pcount"></div>
+  </div>
+  <div class="row">
+    <button id="back">Back to the list</button>
+    <button id="next">Next video</button>
+  </div>
+</div>
+
+<script>
+const KEY = 'guitarnautics.counts.v1', LAST = 'guitarnautics.last.v1';
+const load = (k, d) => { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch { return d; } };
+const save = (k, v) => { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} };
+let counts = load(KEY, {}), last = load(LAST, null), videos = [], cur = -1, counted = false;
+const $ = (id) => document.getElementById(id);
+const mmss = (s) => `${Math.floor(s / 60)}:${String(Math.round(s % 60)).padStart(2, '0')}`;
+const times = (n) => n === 1 ? 'once' : n === 2 ? 'twice' : `${n} times`;
+
+function render() {
+  const groups = [];
+  for (const v of videos) {
+    if (!groups.length || groups.at(-1).name !== v.strand) groups.push({ name: v.strand, items: [] });
+    groups.at(-1).items.push(v);
+  }
+  $('list').innerHTML = groups.map((g) => `<h2>${g.name}</h2><ul>${g.items.map((v) => {
+    const n = counts[v.id] || 0;
+    return `<li data-i="${v.i}" class="${last === v.id ? 'last' : ''}"><span class="n">${v.n}</span>
+      <span class="t"><b>${v.title}</b><small>${mmss(v.duration)}</small></span>
+      <span class="c ${n ? 'on' : ''}">${n ? '×' + n : '–'}</span></li>`;
+  }).join('')}</ul>`).join('');
+  const seen = videos.filter((v) => counts[v.id]).length, plays = Object.values(counts).reduce((a, b) => a + b, 0);
+  $('sum').textContent = `${seen} of ${videos.length} watched · ${plays} plays`;
+  $('prog').style.width = `${(100 * seen / Math.max(1, videos.length)).toFixed(1)}%`;
+}
+
+function open(i) {
+  cur = i; counted = false;
+  const v = videos[i];
+  last = v.id; save(LAST, last);
+  $('video').src = `videos/${v.id}.mp4`;
+  $('pstrand').textContent = v.strand;
+  $('ptitle').textContent = v.title;
+  showCount();
+  $('player').classList.add('open');
+  $('video').play().catch(() => {});
+}
+function showCount() {
+  const n = counts[videos[cur].id] || 0;
+  $('pcount').textContent = n ? `Watched ${times(n)}` : 'Not watched yet';
+}
+function close() { $('video').pause(); $('player').classList.remove('open'); render(); }
+
+$('list').addEventListener('click', (e) => { const li = e.target.closest('li'); if (li) open(Number(li.dataset.i)); });
+$('back').onclick = close;
+$('next').onclick = () => { if (cur + 1 < videos.length) open(cur + 1); else close(); };
+// a watch counts once 90% of the video has played; starting again from the top allows another
+$('video').addEventListener('timeupdate', (e) => {
+  const el = e.target;
+  if (!counted && el.duration && el.currentTime >= el.duration * 0.9) {
+    counted = true;
+    const id = videos[cur].id;
+    counts[id] = (counts[id] || 0) + 1; save(KEY, counts); showCount();
+  }
+  if (counted && el.currentTime < el.duration * 0.05) counted = false;
+});
+window.addEventListener('popstate', close);
+
+fetch('catalogue.json', { cache: 'no-cache' }).then((r) => r.json()).then((list) => {
+  videos = list.map((v, i) => ({ ...v, i }));
+  render();
+  const li = document.querySelector('li.last');
+  if (li) li.scrollIntoView({ block: 'center' });
+}).catch(() => { $('sum').textContent = 'Could not load the list of videos.'; });
+
+if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
+</script>
+</body>
+</html>
