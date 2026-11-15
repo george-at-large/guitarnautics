@@ -428,370 +428,433 @@
  },
  {
   "n": 62,
+  "id": "c11-albeniz-asturias",
+  "strand": "Repertoire",
+  "title": "Albéniz: Asturias",
+  "duration": 27
+ },
+ {
+  "n": 63,
   "id": "c12-granados-andaluza",
   "strand": "Repertoire",
   "title": "Granados: Andaluza",
   "duration": 27
  },
  {
-  "n": 63,
+  "n": 64,
+  "id": "c13-romance",
+  "strand": "Repertoire",
+  "title": "Romance",
+  "duration": 57
+ },
+ {
+  "n": 65,
   "id": "c14-carcassi-op60-no3",
   "strand": "Repertoire",
   "title": "Carcassi: Study Op. 60 No. 3",
   "duration": 36
  },
  {
-  "n": 64,
+  "n": 66,
   "id": "c15-coste-op38-no22",
   "strand": "Repertoire",
   "title": "Coste: Allegro moderato Op. 38",
   "duration": 32
  },
  {
-  "n": 65,
+  "n": 67,
   "id": "c16-coste-agitato",
   "strand": "Repertoire",
   "title": "Coste: Agitato Op. 38 No. 7",
   "duration": 29
  },
  {
-  "n": 66,
+  "n": 68,
   "id": "c2-bach-bourree",
   "strand": "Repertoire",
   "title": "Bach: Bourrée in E minor",
   "duration": 30
  },
  {
-  "n": 67,
+  "n": 69,
+  "id": "c3-bach-prelude-bwv999",
+  "strand": "Repertoire",
+  "title": "Bach: Prelude BWV 999",
+  "duration": 54
+ },
+ {
+  "n": 70,
   "id": "c4-dowland-lachrimae",
   "strand": "Repertoire",
   "title": "Dowland: Lachrimae",
   "duration": 43
  },
  {
-  "n": 68,
+  "n": 71,
   "id": "c5-sor-op35-no22",
   "strand": "Repertoire",
   "title": "Sor: Study in B minor",
   "duration": 47
  },
  {
-  "n": 69,
+  "n": 72,
+  "id": "c8-tarrega-lagrima",
+  "strand": "Repertoire",
+  "title": "Tárrega: Lágrima",
+  "duration": 53
+ },
+ {
+  "n": 73,
   "id": "c9-tarrega-adelita",
   "strand": "Repertoire",
   "title": "Tárrega: Adelita",
   "duration": 53
  },
  {
-  "n": 70,
+  "n": 74,
   "id": "cl3-bach-preludio-bwv1006a",
   "strand": "Repertoire",
   "title": "Bach: Preludio BWV 1006a",
   "duration": 54
  },
  {
-  "n": 71,
+  "n": 75,
   "id": "cl5-coste-prelude-dm",
   "strand": "Repertoire",
   "title": "Coste: Prélude in D minor",
   "duration": 49
  },
  {
-  "n": 72,
+  "n": 76,
+  "id": "cm1-danny-boy",
+  "strand": "Repertoire",
+  "title": "Danny Boy",
+  "duration": 63
+ },
+ {
+  "n": 77,
+  "id": "cm2-someone-to-watch",
+  "strand": "Repertoire",
+  "title": "Gershwin: Someone to Watch Over Me",
+  "duration": 59
+ },
+ {
+  "n": 78,
+  "id": "cm3-embraceable-you",
+  "strand": "Repertoire",
+  "title": "Gershwin: Embraceable You",
+  "duration": 55
+ },
+ {
+  "n": 79,
   "id": "cp1-bach-invention-1",
   "strand": "Repertoire",
   "title": "Bach: Invention No. 1",
   "duration": 34
  },
  {
-  "n": 73,
+  "n": 80,
   "id": "cp10-bach-fuga-bwv1001",
   "strand": "Repertoire",
   "title": "Bach: Fuga BWV 1001",
   "duration": 36
  },
  {
-  "n": 74,
+  "n": 81,
   "id": "cp11-narvaez-emperador",
   "strand": "Repertoire",
   "title": "Narváez: Canción del Emperador",
   "duration": 45
  },
  {
-  "n": 75,
+  "n": 82,
   "id": "cp12-mudarra-fantasia",
   "strand": "Repertoire",
   "title": "Mudarra: Fantasía",
   "duration": 45
  },
  {
-  "n": 76,
+  "n": 83,
   "id": "cp3-bach-invention-8",
   "strand": "Repertoire",
   "title": "Bach: Invention No. 8",
   "duration": 39
  },
  {
-  "n": 77,
+  "n": 84,
   "id": "cp8-scarlatti-k11",
   "strand": "Repertoire",
   "title": "Scarlatti: Sonata K. 11",
   "duration": 35
  },
  {
-  "n": 78,
+  "n": 85,
+  "id": "cp9-narvaez-guardame-las-vacas",
+  "strand": "Repertoire",
+  "title": "Narváez: Guárdame las vacas",
+  "duration": 43
+ },
+ {
+  "n": 86,
   "id": "fb1-she-moved-through-the-fair",
   "strand": "Repertoire",
   "title": "She Moved Through the Fair",
   "duration": 66
  },
  {
-  "n": 79,
+  "n": 87,
   "id": "fb4-byrd-earl-of-salisbury",
   "strand": "Repertoire",
   "title": "Byrd: The Earl of Salisbury",
   "duration": 41
  },
  {
-  "n": 80,
+  "n": 88,
   "id": "fb6-scarborough-fair",
   "strand": "Repertoire",
   "title": "Scarborough Fair",
   "duration": 45
  },
  {
-  "n": 81,
+  "n": 89,
   "id": "fb7-johnson-alman",
   "strand": "Repertoire",
   "title": "Robert Johnson: Alman",
   "duration": 49
  },
  {
-  "n": 82,
+  "n": 90,
   "id": "fb8-american-primitive",
   "strand": "Repertoire",
   "title": "An American primitive study",
   "duration": 20
  },
  {
-  "n": 83,
+  "n": 91,
   "id": "j1-st-louis-blues",
   "strand": "Repertoire",
   "title": "Handy: St. Louis Blues",
   "duration": 63
  },
  {
-  "n": 84,
+  "n": 92,
   "id": "j2-rhythm-changes",
   "strand": "Repertoire",
   "title": "Rhythm changes",
   "duration": 85
  },
  {
-  "n": 85,
+  "n": 93,
   "id": "j4-sweet-georgia-brown",
   "strand": "Repertoire",
   "title": "Sweet Georgia Brown",
   "duration": 36
  },
  {
-  "n": 86,
+  "n": 94,
   "id": "l1-la-cumparsita",
   "strand": "Repertoire",
   "title": "La Cumparsita",
   "duration": 71
  },
  {
-  "n": 87,
+  "n": 95,
   "id": "l2-cielito-lindo",
   "strand": "Repertoire",
   "title": "Cielito Lindo",
   "duration": 53
  },
  {
-  "n": 88,
+  "n": 96,
   "id": "l3-son-montuno",
   "strand": "Repertoire",
   "title": "Son montuno: the guajeo",
   "duration": 26
  },
  {
-  "n": 89,
+  "n": 97,
   "id": "o1-sea-glass",
   "strand": "Repertoire",
   "title": "Sea Glass",
   "duration": 73
  },
  {
-  "n": 90,
+  "n": 98,
+  "id": "r1-joplin-entertainer",
+  "strand": "Repertoire",
+  "title": "Joplin: The Entertainer",
+  "duration": 33
+ },
+ {
+  "n": 99,
   "id": "r2-west-coast-blues",
   "strand": "Repertoire",
   "title": "Blind Blake: West Coast Blues",
   "duration": 39
  },
  {
-  "n": 91,
+  "n": 100,
   "id": "r3-delta-turnarounds",
   "strand": "Repertoire",
   "title": "Delta blues turnarounds",
   "duration": 30
  },
  {
-  "n": 92,
+  "n": 101,
   "id": "r3a-bach-prelude-opening",
   "strand": "Repertoire",
   "title": "Bach: Cello Suite No. 1, Prelude",
   "duration": 50
  },
  {
-  "n": 93,
+  "n": 102,
   "id": "r5-si-bheag-si-mhor",
   "strand": "Repertoire",
   "title": "O'Carolan: Si Bheag Si Mhor",
   "duration": 46
  },
  {
-  "n": 94,
+  "n": 103,
   "id": "r6-soldiers-joy",
   "strand": "Repertoire",
   "title": "Soldier's Joy",
   "duration": 47
  },
  {
-  "n": 95,
+  "n": 104,
   "id": "s1-malaguena",
   "strand": "Repertoire",
   "title": "Malagueña",
   "duration": 35
  },
  {
-  "n": 96,
+  "n": 105,
   "id": "s2-solea-compas",
   "strand": "Repertoire",
   "title": "Soleá: compás and falseta",
   "duration": 41
  },
  {
-  "n": 97,
+  "n": 106,
   "id": "s3-bulerias-compas",
   "strand": "Repertoire",
   "title": "Bulerías: compás and remate",
   "duration": 40
  },
  {
-  "n": 98,
+  "n": 107,
   "id": "tp1-railroad-bill",
   "strand": "Repertoire",
   "title": "Railroad Bill",
   "duration": 49
  },
  {
-  "n": 99,
+  "n": 108,
   "id": "tp10-soukous-seben",
   "strand": "Repertoire",
   "title": "Soukous seben",
   "duration": 34
  },
  {
-  "n": 100,
+  "n": 109,
   "id": "tp11-desert-blues",
   "strand": "Repertoire",
   "title": "Desert blues",
   "duration": 38
  },
  {
-  "n": 101,
+  "n": 110,
   "id": "tp12-st-louis-walking",
   "strand": "Repertoire",
   "title": "St. Louis Blues: walking bass",
   "duration": 33
  },
  {
-  "n": 102,
+  "n": 111,
   "id": "tp2-wayfaring-stranger",
   "strand": "Repertoire",
   "title": "Wayfaring Stranger",
   "duration": 55
  },
  {
-  "n": 103,
+  "n": 112,
   "id": "tp3-aloha-oe",
   "strand": "Repertoire",
   "title": "Aloha ʻOe",
   "duration": 54
  },
  {
-  "n": 104,
+  "n": 113,
   "id": "tp4-dadgad-folk-baroque",
   "strand": "Repertoire",
   "title": "Folk baroque in DADGAD",
   "duration": 42
  },
  {
-  "n": 105,
+  "n": 114,
   "id": "tp5-pernambuco-carrilhoes",
   "strand": "Repertoire",
   "title": "Pernambuco: Sons de Carrilhões",
   "duration": 36
  },
  {
-  "n": 106,
+  "n": 115,
   "id": "tp6-barrios-maxixe",
   "strand": "Repertoire",
   "title": "Barrios: Maxixe",
   "duration": 54
  },
  {
-  "n": 107,
+  "n": 116,
   "id": "tp7-tarrega-recuerdos",
   "strand": "Repertoire",
   "title": "Tárrega: Recuerdos de la Alhambra",
   "duration": 53
  },
  {
-  "n": 108,
+  "n": 117,
   "id": "tp8-tarrega-velocidad",
   "strand": "Repertoire",
   "title": "Tárrega: Estudio de Velocidad",
   "duration": 51
  },
  {
-  "n": 109,
+  "n": 118,
   "id": "tp9-palm-wine",
   "strand": "Repertoire",
   "title": "Palm-wine guitar",
   "duration": 37
  },
  {
-  "n": 110,
+  "n": 119,
   "id": "w1-raga-yaman",
   "strand": "Repertoire",
   "title": "Raga Yaman on guitar",
   "duration": 61
  },
  {
-  "n": 111,
+  "n": 120,
   "id": "w2-slack-key",
   "strand": "Repertoire",
   "title": "Hawaiian slack-key",
   "duration": 21
  },
  {
-  "n": 112,
+  "n": 121,
   "id": "w3-kora-pattern",
   "strand": "Repertoire",
   "title": "A kora pattern",
   "duration": 20
  },
  {
-  "n": 113,
+  "n": 122,
   "id": "g1-bossa-nova",
   "strand": "Other",
   "title": "Bossa nova",
   "duration": 115
  },
  {
-  "n": 114,
+  "n": 123,
   "id": "g6-funk",
   "strand": "Other",
   "title": "Funk rhythm guitar",
