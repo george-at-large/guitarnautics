@@ -43,6 +43,28 @@
   .row { display: flex; gap: 10px; padding: 8px 16px calc(env(safe-area-inset-bottom) + 16px); margin-top: auto; }
   button { flex: 1; background: var(--panel); color: var(--ink); border: 1px solid var(--line); border-radius: 12px; padding: 13px; font: inherit; }
   button:active { background: var(--line); }
+  /* practice tools: metronome and drone, under every video */
+  .tools { margin: 0 16px; border: 1px solid var(--line); border-radius: 14px; background: var(--panel); }
+  .tool { display: flex; flex-direction: column; gap: 8px; padding: 10px 12px; }
+  .line { display: flex; align-items: center; gap: 8px; }
+  .tools .grow { flex: 1; min-width: 0; }
+  .tool + .tool { border-top: 1px solid var(--line); }
+  .tools button { flex: none; padding: 8px 12px; border-radius: 10px; font-size: 15px; background: var(--bg); }
+  .tools .tog { width: 118px; text-align: left; display: flex; align-items: center; gap: 8px; }
+  .tools .tog::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; transition: background .06s; }
+  .tools .tog.on { border-color: var(--accent); color: var(--accent); }
+  .tools .tog.on::before { background: var(--accent); }
+  .tools .tog.beat::before { background: var(--ink); }
+  .tools .tog.beat.accent::before { background: #fff; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 60%, transparent); }
+  .tools .sq { width: 38px; padding: 8px 0; text-align: center; }
+  .tools input[type=number] { width: 58px; text-align: center; background: var(--bg); color: var(--ink); border: 1px solid var(--line);
+       border-radius: 10px; padding: 8px 4px; font: inherit; font-size: 15px; font-variant-numeric: tabular-nums; -moz-appearance: textfield; }
+  .tools input[type=number]::-webkit-inner-spin-button, .tools input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  .tools select { background: var(--bg); color: var(--ink); border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; font: inherit; font-size: 15px; }
+  .tools .lbl { color: var(--dim); font-size: 13px; }
+  .tools .vol { flex: 1; min-width: 0; display: flex; align-items: center; gap: 6px; }
+  .tools .vol input { flex: 1; min-width: 0; accent-color: var(--accent); }
+  @media (orientation: landscape) { .tools { display: none; } }
   @media (orientation: landscape) { #player video { max-height: 100vh; height: 100vh; margin-top: 0; } #player .ph, #player .row { display: none; } }
 </style>
 </head>
@@ -60,6 +82,46 @@
     <div class="strand" id="pstrand"></div>
     <div class="title" id="ptitle"></div>
     <div class="count" id="pcount"></div>
+  </div>
+  <div class="tools">
+    <div class="tool">
+      <div class="line">
+        <button class="tog" id="mOn" aria-pressed="false">Metronome</button>
+        <label class="vol"><span class="lbl">Vol</span><input type="range" id="mVol" min="0" max="1" step="0.01" value="0.6" aria-label="Metronome volume"></label>
+      </div>
+      <div class="line">
+        <button class="sq" id="mDown" aria-label="Slower">−</button>
+        <input type="number" id="mBpm" inputmode="numeric" min="30" max="260" value="80" aria-label="Beats per minute">
+        <button class="sq" id="mUp" aria-label="Faster">+</button>
+        <button id="mTap">Tap</button>
+        <select id="mBeats" aria-label="Accent" class="grow">
+          <option value="0">No accent</option><option value="2">2 beats</option><option value="3">3 beats</option>
+          <option value="4">4 beats</option><option value="6">6 beats</option>
+        </select>
+      </div>
+    </div>
+    <div class="tool">
+      <div class="line">
+        <button class="tog" id="dOn" aria-pressed="false">Drone</button>
+        <label class="vol"><span class="lbl">Vol</span><input type="range" id="dVol" min="0" max="1" step="0.01" value="0.5" aria-label="Drone volume"></label>
+      </div>
+      <div class="line">
+        <select id="dKey" class="grow" aria-label="Drone key">
+          <optgroup label="Most used">
+            <option value="4">E</option><option value="9">A</option><option value="7">G</option><option value="2">D</option><option value="0">C</option>
+          </optgroup>
+          <optgroup label="Common">
+            <option value="5">F</option><option value="10">B♭</option><option value="11">B</option><option value="3">E♭</option>
+          </optgroup>
+          <optgroup label="Less common">
+            <option value="6">F♯ / G♭</option><option value="8">A♭</option><option value="1">D♭ / C♯</option>
+          </optgroup>
+        </select>
+        <select id="dVoice" aria-label="Drone notes" class="grow">
+          <option value="r5">Root + 5th</option><option value="r">Root only</option>
+        </select>
+      </div>
+    </div>
   </div>
   <div class="row">
     <button id="back">Back to the list</button>
@@ -108,7 +170,8 @@ function showCount() {
   const n = counts[videos[cur].id] || 0;
   $('pcount').textContent = n ? `Watched ${times(n)}` : 'Not watched yet';
 }
-function close() { $('video').pause(); $('player').classList.remove('open'); render(); }
+// the metronome and drone keep going from one video to the next, and stop on going back to the list
+function close() { metroStop(); droneStop(); $('video').pause(); $('player').classList.remove('open'); render(); }
 
 $('list').addEventListener('click', (e) => { const li = e.target.closest('li'); if (li) open(Number(li.dataset.i)); });
 $('back').onclick = close;
@@ -131,6 +194,127 @@ fetch('catalogue.json', { cache: 'no-cache' }).then((r) => r.json()).then((list)
   const li = document.querySelector('li.last');
   if (li) li.scrollIntoView({ block: 'center' });
 }).catch(() => { $('sum').textContent = 'Could not load the list of videos.'; });
+
+// ---- practice tools: a metronome and a drone, on every video, each switched on and off on its own ----
+const TOOLS = 'guitarnautics.tools.v1';
+const tools = Object.assign({ bpm: 80, beats: 4, mVol: 0.6, key: 4, voice: 'r5', dVol: 0.5 }, load(TOOLS, {}));
+const saveTools = () => save(TOOLS, tools);
+let ac = null;
+function audio() {
+  if (!ac) {
+    // on iPhone, let these sound with the ring/silent switch on silent, as the video does
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch {}
+    ac = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (ac.state !== 'running') ac.resume();
+  return ac;
+}
+const curve = (v) => v * v;  // volume sliders feel even when squared
+
+// metronome: Web Audio clicks scheduled a little ahead so they stay steady
+const metro = { on: false, timer: 0, next: 0, beat: 0, out: null };
+function click(t, accent) {
+  const o = ac.createOscillator(), g = ac.createGain();
+  o.type = 'sine'; o.frequency.value = accent ? 1760 : 1175;
+  g.gain.setValueAtTime(0.0001, t);
+  g.gain.exponentialRampToValueAtTime(accent ? 1 : 0.7, t + 0.002);
+  g.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+  o.connect(g).connect(metro.out); o.start(t); o.stop(t + 0.06);
+  const el = $('mOn'), ms = Math.max(0, (t - ac.currentTime) * 1000);
+  setTimeout(() => { el.classList.add('beat'); el.classList.toggle('accent', accent); }, ms);
+  setTimeout(() => el.classList.remove('beat', 'accent'), ms + 90);
+}
+function tick() {
+  while (metro.next < ac.currentTime + 0.12) {
+    click(metro.next, tools.beats > 0 && metro.beat % tools.beats === 0);
+    metro.beat++; metro.next += 60 / tools.bpm;
+  }
+}
+function metroStart() {
+  audio();
+  if (!metro.out) { metro.out = ac.createGain(); metro.out.connect(ac.destination); }
+  metro.out.gain.value = curve(tools.mVol);
+  metro.on = true; metro.beat = 0; metro.next = ac.currentTime + 0.06;
+  tick(); metro.timer = setInterval(tick, 25);
+  showTools();
+}
+function metroStop() { metro.on = false; clearInterval(metro.timer); showTools(); }
+
+// drone: root (and fifth) in a low, warm voice, an octave of the root above to fill it out
+const drone = { on: false, out: null, voices: [] };
+function droneStart() {
+  audio();
+  droneStop(true);
+  const now = ac.currentTime;
+  if (!drone.out) { drone.out = ac.createGain(); drone.out.gain.value = 0; drone.out.connect(ac.destination); }
+  const lp = ac.createBiquadFilter(); lp.type = 'lowpass'; lp.frequency.value = 900; lp.Q.value = 0.4;
+  const lfo = ac.createOscillator(), lfoAmt = ac.createGain();
+  lfo.frequency.value = 0.12; lfoAmt.gain.value = 250; lfo.connect(lfoAmt).connect(lp.frequency); lfo.start();
+  lp.connect(drone.out);
+  // the root sits between E2 and D♯3, the guitar's low register
+  const root = 82.41 * Math.pow(2, ((tools.key - 4 + 12) % 12) / 12);
+  const notes = [[root, 1], [root * 2, 0.45]];
+  if (tools.voice === 'r5') notes.push([root * 1.5, 0.6]);
+  const oscs = [lfo];
+  for (const [f, level] of notes) {
+    for (const det of [-6, 6]) {
+      const o = ac.createOscillator(), g = ac.createGain();
+      o.type = 'sawtooth'; o.frequency.value = f; o.detune.value = det;
+      g.gain.value = level * 0.09; o.connect(g).connect(lp); o.start(); oscs.push(o);
+    }
+  }
+  drone.voices = oscs; drone.lp = lp;
+  drone.out.gain.cancelScheduledValues(now);
+  drone.out.gain.setValueAtTime(drone.out.gain.value, now);
+  drone.out.gain.linearRampToValueAtTime(curve(tools.dVol), now + 0.6);
+  drone.on = true; showTools();
+}
+function droneStop(swap) {
+  if (!ac || !drone.voices.length) { if (!swap) { drone.on = false; showTools(); } return; }
+  const now = ac.currentTime, fade = swap ? 0.08 : 0.5, old = drone.voices, lp = drone.lp;
+  drone.out.gain.cancelScheduledValues(now);
+  drone.out.gain.setValueAtTime(drone.out.gain.value, now);
+  drone.out.gain.linearRampToValueAtTime(0, now + fade);
+  old.forEach((o) => o.stop(now + fade + 0.02));
+  setTimeout(() => lp.disconnect(), (fade + 0.1) * 1000);
+  drone.voices = [];
+  if (!swap) { drone.on = false; showTools(); }
+}
+
+function showTools() {
+  $('mOn').classList.toggle('on', metro.on); $('mOn').setAttribute('aria-pressed', metro.on);
+  $('dOn').classList.toggle('on', drone.on); $('dOn').setAttribute('aria-pressed', drone.on);
+  $('mBpm').value = tools.bpm; $('mBeats').value = tools.beats; $('mVol').value = tools.mVol;
+  $('dKey').value = tools.key; $('dVoice').value = tools.voice; $('dVol').value = tools.dVol;
+}
+function setBpm(b) {
+  tools.bpm = Math.max(30, Math.min(260, Math.round(b) || 80)); saveTools();
+  $('mBpm').value = tools.bpm;
+}
+$('mOn').onclick = () => (metro.on ? metroStop() : metroStart());
+$('dOn').onclick = () => (drone.on ? droneStop() : droneStart());
+$('mDown').onclick = () => setBpm(tools.bpm - 1);
+$('mUp').onclick = () => setBpm(tools.bpm + 1);
+$('mBpm').addEventListener('change', (e) => setBpm(Number(e.target.value)));
+$('mBeats').onchange = (e) => { tools.beats = Number(e.target.value); metro.beat = 0; saveTools(); };
+$('mVol').oninput = (e) => { tools.mVol = Number(e.target.value); saveTools(); if (metro.out) metro.out.gain.value = curve(tools.mVol); };
+$('dKey').onchange = (e) => { tools.key = Number(e.target.value); saveTools(); if (drone.on) droneStart(); };
+$('dVoice').onchange = (e) => { tools.voice = e.target.value; saveTools(); if (drone.on) droneStart(); };
+$('dVol').oninput = (e) => {
+  tools.dVol = Number(e.target.value); saveTools();
+  if (drone.on) { drone.out.gain.cancelScheduledValues(ac.currentTime); drone.out.gain.setTargetAtTime(curve(tools.dVol), ac.currentTime, 0.03); }
+};
+// tap tempo: the average of the last few taps; a pause of two seconds starts over
+let taps = [];
+$('mTap').onclick = () => {
+  const t = performance.now();
+  if (taps.length && t - taps.at(-1) > 2000) taps = [];
+  taps.push(t); taps = taps.slice(-5);
+  if (taps.length > 1) setBpm(60000 * (taps.length - 1) / (taps.at(-1) - taps[0]));
+  if (metro.on) { metro.beat = 0; metro.next = audio().currentTime + 60 / tools.bpm; }
+};
+showTools();
+
 
 if ('serviceWorker' in navigator) navigator.serviceWorker.register('sw.js').catch(() => {});
 </script>
